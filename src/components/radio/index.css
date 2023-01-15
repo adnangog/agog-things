@@ -1,0 +1,97 @@
+.agog-radio {
+
+}
+
+.agog-radio-label {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    margin-left: -11px;
+    margin-right: 16px;
+}
+.agog-radio-root {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    padding: 9px;
+    border-radius: 50%;
+    color: rgba(0, 0, 0, 0.6);
+}
+.agog-radio-root.checked {
+    color: rgb(25, 118, 210);
+}
+.agog-radio-input {
+    cursor: inherit;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
+.agog-radio-icon {
+    position: relative;
+    display: flex;
+}
+.agog-radio-svg1 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+    transform: scale(1);
+}
+.agog-radio-svg2 {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    left: 0px;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.agog-radio-root.checked .agog-radio-svg2 {
+    transform: scale(1);
+}
+.agog-radio-checked {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+.agog-radio-title{
+    margin: 0px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}

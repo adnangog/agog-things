@@ -1,0 +1,44 @@
+.agog-tooltip {
+    position: relative;
+}
+.agog-tooltip-root {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(51, 51, 51, .8);
+    color: #fff;
+    white-space: nowrap;
+    padding: 3px 15px 6px;
+    border-radius: 5px;
+    left: 0;
+    transition: opacity 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.agog-tooltip:hover .agog-tooltip-root {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.agog-tooltip-root:after, .agog-tooltip-root:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.agog-tooltip-root:after {
+    border-color: rgba(51, 51, 51, 0);
+    border-right-color:  rgba(51, 51, 51, .8);
+    border-width: 8px;
+    margin-top: -8px;
+}
+
+.agog-tooltip-root:before {
+    border-color: rgba(204, 204, 204, 0);
+    border-width: 9px;
+    margin-top: -9px;
+}

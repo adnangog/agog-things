@@ -1,0 +1,213 @@
+.agog-table {
+    max-width: 100%;
+    position: relative;
+    background-color: rgb(255,255,255);
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    padding: 10px;
+}
+.agog-table-content {
+    width: 100%;
+    max-height: 430px;
+    overflow: auto;
+}
+.agog-table table {
+    width: 1300px;
+    min-width: 100%;
+    table-layout: fixed;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+.agog-table tr {
+    position: relative;
+    color: inherit;
+    display: table-row;
+    vertical-align: middle;
+    outline: 0px;
+}
+.agog-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.agog-table th {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01071em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    text-align: left;
+    padding: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    z-index: 2;
+    background-color: #fafafa;
+    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    position: relative;
+    border-right: 1px solid rgb(224, 224, 224);
+}
+.agog-table th svg.sorted-icon, .agog-table th svg.filtered-icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    font-size: 18px;
+    margin-right: 4px;
+    margin-left: 4px;
+    opacity: 0;
+    transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+}
+.agog-table th.sorting:hover, .agog-table th.sorted {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.37);
+}
+.agog-table th svg.filtered-icon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.agog-table th.sorted, .agog-table th.sorted:hover {
+  color: rgba(0, 0, 0, 1);
+}
+.agog-table th:hover svg, .agog-table th.sorted svg.sorted-icon {
+    opacity: 1;
+}
+.agog-table th.filtered svg.filtered-icon {
+  opacity: 1;
+  fill: #f00;
+}
+.agog-table td {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    text-align: left;
+    padding: 8px 16px;
+    color: rgba(0, 0, 0, 0.87);
+}
+.agog-table table .sticky {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+}
+.agog-table table .stickyHeader {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.agog-table .agog-table-content::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .agog-table .agog-table-content::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  .agog-table .agog-table-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2)
+  }
+  .agog-table .agog-table-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3)
+  }
+
+  /*** pager ***/
+  .agog-table .pager {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+  }
+  .pager .pager-item {
+    min-width: 24px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor:pointer;
+    padding: 3px;
+    border-radius: 2px;
+  }
+  .pager .pager-item:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+  }
+  .pager .pager-item.active {
+    background-color: transparent;
+    border:1px solid rgb(25, 118, 210);
+    color: rgb(25, 118, 210);
+  }
+  .filter-block {
+    background-color: #ebebeb;
+    padding: 0 10px;
+    height: 0;
+    opacity: 0;
+    transition: height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, padding 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .filter-block.show {
+    padding: 15px 10px 5px;
+    height: 120px;
+    opacity: 1;
+    transition: height 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, padding 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  .filter-block div.filter-form-items {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+  .filter-block .filter-items {
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+  }
+  .filter-item {
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    appearance: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.8125rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    gap:5px;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    white-space: nowrap;
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    cursor: pointer;
+    outline: 0px;
+    border: 0px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-weight: 600;
+    overflow: hidden;
+  }
+  .filter-item div:first-child {
+    font-size: 10px;
+    font-weight: 600;
+    color: #666;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 7px 7px 7px 10px;
+    font-weight: 300;
+  }
+  .filter-item div.delete-item {
+    padding: 5px 8px 5px 5px;
+    color: #fff;
+  }
+  .filter-item div.delete-item svg {
+    width: 10px
+  }

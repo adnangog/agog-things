@@ -1,0 +1,222 @@
+.agog-datepicker {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0px;
+  padding: 0px;
+  border: 0px;
+  vertical-align: top;
+}
+.date-picker {
+  position: relative;
+  color: #000;
+}
+
+.calendar-dropdown {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .2s ease-in-out;
+  z-index: 99;
+  padding: 5px 5px 15px;
+  width: 294px;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+  transform-origin: center top;
+  outline: 0px;
+  max-height: 358px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.datepicker-active .date-picker .calendar-dropdown {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+ 
+}
+
+.calendar-dropdown.top {
+  top: auto;
+  bottom: 100%;
+  transform: translate(-50%, -8px);
+}
+
+.calendar-dropdown.left {
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-8px + -100%), -50%);
+}
+
+.calendar-dropdown.right {
+  top: 50%;
+  left: 100%;
+  transform: translate(8px, -50%);
+}
+
+.calendar-dropdown.visible {
+  display: block;
+}
+
+.header {
+  margin: 5px 0 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 5px;
+ 
+}
+
+.header p {
+  margin: 0;
+  font-size: 21px;
+  width: 60%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: text-top;
+  border: none;
+  outline: none;
+}
+.header div {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+.header div:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.header button {
+  min-width: 1em;
+  font-size: 10px;
+  padding: 0;
+  color: rgba(0, 0, 0, .45);
+  line-height: 40px;
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+  transition: color .2s;
+  
+}
+.super-prev-icon, .prev-icon {
+  transform: rotate(-45deg);
+}
+.super-next-icon, .next-icon {
+  transform: rotate(135deg);
+}
+
+.prev-icon, .next-icon, .super-prev-icon, .super-next-icon {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+}
+
+.prev-icon::before, .next-icon::before, .super-prev-icon::before, .super-next-icon::before {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border: 0 solid currentcolor;
+  border-block-start-width: 1.5px;
+  border-block-end-width: 0;
+  border-inline-start-width: 1.5px;
+  border-inline-end-width: 0;
+  content: "";
+}
+
+.super-prev-icon::after, .super-next-icon::after{
+  position: absolute;
+    top: 4px;
+    inset-inline-start: 4px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 0 solid currentcolor;
+    border-block-start-width: 1.5px;
+    border-block-end-width: 0;
+    border-inline-start-width: 1.5px;
+    border-inline-end-width: 0;
+    content: "";
+}
+.icon-cont {
+  position: relative;
+  top: -8px;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.icon-cont.super-prev {
+  left:-2px;
+}
+.icon-cont.super-next {
+  left:2px;
+}
+
+.week-days {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.week-days span {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 36px;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  margin: 0px 2px;
+}
+
+.month-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.month-day {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0px;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.2);
+  margin: 0px 2px;
+}
+
+.month-day.current {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.month-day.selected {
+  will-change: background-color;
+  background-color: rgb(21, 101, 192);
+  color: #fff;
+}
+
+.month-day:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
