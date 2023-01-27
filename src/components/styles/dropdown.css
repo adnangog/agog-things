@@ -1,0 +1,41 @@
+body.popUp{
+    overflow: hidden;
+    margin-right: 18px;
+}
+.blankContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+.blankContainerBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.60)
+}
+.blankContainerContent {
+    position: absolute;
+    z-index: 2;
+}
+
+.agoga-dropdown {
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  body.popUp .agoga-dropdown  {
+    opacity: 1;
+    visibility: visible;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }

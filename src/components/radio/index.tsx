@@ -1,5 +1,5 @@
 import Ripple from '../button/ripple'
-import './index.css'
+import '../styles/radio.css'
 
 export default function Radio({ onChange, value, label, infoText, items, style }: RadioButtonProps) {
   return (

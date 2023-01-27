@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useOutsideChecker } from '../../helpers/hooks'
+import '../styles/select.css'
 
-import './index.css'
 export default function Select({
   value,
   label,
@@ -15,6 +15,7 @@ export default function Select({
   isMultiple,
   isEtiquette,
   isFilter,
+  isTotalDisplay,
   style,
   type,
 }: SelectProps): JSX.Element {
@@ -109,11 +110,19 @@ export default function Select({
 
   const text = value ? items?.find((i) => i.value === value)?.label : placeholder
   const longText = !isEtiquette
-    ? value
-        ?.toString()
-        .split(',')
-        .map((val) => items?.find((item) => item.value == val)?.label)
-        .join(', ')
+    ? isTotalDisplay
+      ? value?.toString().split(',').length && (
+          <div className='etiquette-item'>
+            <span>
+              <strong>{value?.toString().split(',').length}</strong> selected
+            </span>
+          </div>
+        )
+      : value
+          ?.toString()
+          .split(',')
+          .map((val) => items?.find((item) => item.value == val)?.label)
+          .join(', ')
     : value
         ?.toString()
         .split(',')
@@ -150,7 +159,12 @@ export default function Select({
     <div className={contClass} ref={wrapperRef} onClick={(e) => handleClick(e)} data-value={value} style={style}>
       {label && <label htmlFor='myTextBox'>{label}</label>}
       <div className='form-element'>
-        <div className='select-item'>{!isMultiple ? text : longText} </div>
+        <div
+          className='select-item'
+          style={isEtiquette ? { display: 'flex' } : { display: 'block', textAlign: 'left' }}
+        >
+          {!isMultiple ? text : longText}{' '}
+        </div>
         <fieldset aria-hidden='true'>
           {label && (
             <legend>
@@ -212,6 +226,7 @@ export interface SelectProps {
   isMultiple?: boolean
   isEtiquette?: boolean
   isFilter?: boolean
+  isTotalDisplay?: boolean
   style?: React.CSSProperties
   type?: 'mini' | 'default'
 }

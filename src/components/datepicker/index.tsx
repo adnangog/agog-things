@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useOutsideChecker } from '../../helpers/hooks'
 import TextBox, { TextBoxProps } from '../textbox'
-import './index.css'
+import '../styles/datepicker.css'
 export default function DatePicker({
   lang = window.navigator.language,
   format = 'DD.MM.YYYY',

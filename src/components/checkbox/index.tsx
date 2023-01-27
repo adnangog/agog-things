@@ -1,6 +1,14 @@
-import './index.css'
+import '../styles/checkbox.css'
 import Ripple from '../button/ripple'
-export default function CheckBox({ onSelect, value, label, infoText, items, style }: CheckBoxProps) {
+export default function CheckBox({
+  onSelect,
+  value,
+  label,
+  infoText,
+  items,
+  direction = 'vertical',
+  style,
+}: CheckBoxProps) {
   const handleClick = (val: any, e: React.MouseEvent<HTMLDivElement>) => {
     const tempArr: string[] | undefined = value?.toString().split(',')
     if (checkExist(val)) {
@@ -16,7 +24,7 @@ export default function CheckBox({ onSelect, value, label, infoText, items, styl
   }
 
   return (
-    <div className='agog-checkbox' style={{ ...style }}>
+    <div className='agog-checkbox' style={{ ...style, flexDirection: direction === 'horizontal' ? 'row' : 'column' }}>
       {label && <span className='info-text'>{label}</span>}
       {items?.map((item, index) => {
         return (
@@ -60,6 +68,7 @@ export interface CheckBoxProps {
   infoText?: string
   items?: ListItemProps[]
   style?: React.CSSProperties
+  direction?: 'vertical' | 'horizontal'
 }
 
 export interface ListItemProps {

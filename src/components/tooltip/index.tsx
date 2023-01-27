@@ -1,4 +1,4 @@
-import './index.css'
+import '../styles/tooltip.css'
 export default function ToolTip({ children, text }: ToolTipProps) {
   const handleMouse = (event: any) => {
     const elm = Array.from(event.currentTarget.children as HTMLCollectionOf<HTMLElement>)

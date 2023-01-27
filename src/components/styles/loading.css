@@ -1,0 +1,46 @@
+#loading {
+    animation: loading 1.2s infinite, loading2 2.4s infinite, change-color 3s infinite;;
+    transform-origin: center;
+    stroke-dasharray: 126;
+    stroke-dashoffset: 126;
+  }
+  
+  @keyframes loading {
+    from {
+      transform: rotate(0deg);
+      stroke-dashoffset: 126;
+    }
+    to {
+      transform: rotate(360deg);
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes loading2 {
+    from {
+      transform: rotate(360deg);
+      stroke-dashoffset: 0;
+    }
+    to {
+      transform: rotate(0deg);
+      stroke-dashoffset: 126;
+    }
+    
+  }
+  
+  @keyframes change-color {
+    0% {
+      stroke: blue;
+    }
+    25% {
+      stroke: green;
+    }
+    50% {
+      stroke: red;
+    }
+    75% {
+      stroke: purple;
+    }
+    100% {
+      stroke: blue;
+    }
+  }

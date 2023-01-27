@@ -1,6 +1,6 @@
 {
   "name": "agog-things",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "agog things is a react components package",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

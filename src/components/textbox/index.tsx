@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react'
-import './index.css'
+import '../styles/textbox.css'
 export default function TextBox({
   value,
   label,

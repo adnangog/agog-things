@@ -1,5 +1,7 @@
 .agog-checkbox {
-
+display: flex;
+justify-content: center;
+align-items: flex-start;
 }
 
 .agog-checkbox-label {
@@ -11,6 +13,7 @@
     -webkit-tap-highlight-color: transparent;
     margin-left: -11px;
     margin-right: 16px;
+    white-space: nowrap;
 }
 .agog-checkbox-root {
     display: inline-flex;
@@ -30,7 +33,7 @@
     vertical-align: middle;
     appearance: none;
     text-decoration: none;
-    padding: 9px;
+    padding: 6px;
     border-radius: 50%;
     color: rgba(0, 0, 0, 0.6);
 }

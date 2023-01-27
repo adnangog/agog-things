@@ -1,5 +1,5 @@
 import Ripple from './ripple'
-import './index.css'
+import '../styles/button.css'
 
 export default function Button({ children, style, isRipple = false, onClick }: ButtonProps) {
   const handlerClick = () => {
@@ -22,5 +22,5 @@ export interface ButtonProps {
   children: JSX.Element | string
   style?: React.CSSProperties
   isRipple?: boolean
-  onClick?(): void
+  onClick?(e?: any): void
 }

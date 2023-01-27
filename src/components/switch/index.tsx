@@ -1,4 +1,4 @@
-import './index.css'
+import '../styles/switch.css'
 
 export default function Switch({ value, onChange }: SwitchProps): JSX.Element {
   const handleClick = () => {

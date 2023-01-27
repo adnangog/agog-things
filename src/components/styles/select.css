@@ -6,6 +6,7 @@
     padding: 0px;
     border: 0px;
     vertical-align: top;
+    width: 300px;
   }
   .agog-select .form-element {
     font-weight: 400;
@@ -20,6 +21,8 @@
     position: relative;
     border-radius: 4px;
     background-color: #fff;
+    max-width: 100%;
+    
   }
 
   .delete {
@@ -74,8 +77,6 @@
     padding: 16.5px 50px 16.5px 15px;
     height: auto;
     min-height: 1.4375em;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     opacity: 0;
     display: flex;
     justify-content: flex-start;
@@ -83,6 +84,9 @@
     flex-direction: row;
     gap: 5px;
     flex-wrap: wrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;;
   }
   .agog-select.mini .form-element .select-item {
     padding: 5px 30px 5px 5px;
